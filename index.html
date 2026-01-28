@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lista de Livros - Ficção, Filosofia e Fantasia</title>
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #0f172a;
+      color: #e5e7eb;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #020617;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #1e293b;
+    }
+
+    header h1 {
+      margin: 0;
+      color: #38bdf8;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      margin-bottom: 40px;
+      background: #020617;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+
+    section h2 {
+      margin-top: 0;
+      color: #22c55e;
+      border-bottom: 1px solid #1e293b;
+      padding-bottom: 5px;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 25px;
+    }
+
+    li {
+      margin: 8px 0;
+      line-height: 1.5;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #020617;
+      border-top: 2px solid #1e293b;
+      color: #94a3b8;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>📚 Biblioteca Pessoal</h1>
+    <p>Ficção Científica, Filosofia e Fantasia</p>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>🚀 Ficção Científica</h2>
+      <ul id="ficcao"></ul>
+    </section>
+
+    <section>
+      <h2>🧠 Filosofia</h2>
+      <ul id="filosofia"></ul>
+    </section>
+
+    <section>
+      <h2>🧙 Fantasia</h2>
+      <ul id="fantasia"></ul>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 — Lista de livros
+  </footer>
+
+  <script>
+    const livros = {
+      ficcao: [
+        "1984 – George Orwell",
+        "Admirável Mundo Novo – Aldous Huxley",
+        "Fahrenheit 451 – Ray Bradbury",
+        "Eu, Robô – Isaac Asimov",
+        "Fundação – Isaac Asimov",
+        "Duna – Frank Herbert",
+        "O Fim da Infância – Arthur C. Clarke",
+        "A Mão Esquerda da Escuridão – Ursula K. Le Guin",
+        "Neuromancer – William Gibson",
+        "Solaris – Stanisław Lem"
+      ],
+      filosofia: [
+        "O Mundo de Sofia – Jostein Gaarder",
+        "A República – Platão",
+        "Meditações – Marco Aurélio",
+        "Assim Falou Zaratustra – Friedrich Nietzsche",
+        "O Banquete – Platão",
+        "Discurso do Método – René Descartes",
+        "A Arte de Viver – Epicteto",
+        "O Existencialismo é um Humanismo – Jean-Paul Sartre",
+        "Ensaio Sobre a Cegueira – José Saramago",
+        "O Mito de Sísifo – Albert Camus"
+      ],
+      fantasia: [
+        "O Senhor dos Anéis – J.R.R. Tolkien",
+        "O Hobbit – J.R.R. Tolkien",
+        "As Crônicas de Nárnia – C.S. Lewis",
+        "A Canção de Gelo e Fogo – George R. R. Martin",
+        "Mistborn – Brandon Sanderson",
+        "O Nome do Vento – Patrick Rothfuss",
+        "A Roda do Tempo – Robert Jordan",
+        "O Feiticeiro de Terramar – Ursula K. Le Guin",
+        "Conan, o Bárbaro – Robert E. Howard",
+        "O Último Desejo (The Witcher) – Andrzej Sapkowski"
+      ]
+    };
+
+    function renderLista(id, lista) {
+      const ul = document.getElementById(id);
+      lista.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        ul.appendChild(li);
+      });
+    }
+
+    renderLista("ficcao", livros.ficcao);
+    renderLista("filosofia", livros.filosofia);
+    renderLista("fantasia", livros.fantasia);
+  </script>
+
+</body>
+</html>
